@@ -1,40 +1,46 @@
 import React from "react";
 import Painter from "./painter1.jpg";
 import Clean from "./clener.jpg";
-import Electrician from "./elect.jpg";
-//import Electric from "./elect1.jpg";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-//import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
+import CardComponent from "./CardComponent";
 import Typography from "@mui/material/Typography";
 import Carp from "./carp.jpg";
-//import Cook from "./cook.jpg";
+import { Link } from "react-router-dom";
 import Gardener from "./gardener.webp";
+import {
+  Instagram,
+  YouTube,
+  Twitter,
+  LinkedIn,
+  Facebook,
+} from "@mui/icons-material";
 import Paint from "./p123.jpg";
-import Sofa from "./sofa.jpg";
+import SearchableList from "./SearchableList";
+
 import Pipe from "./pipe.webp";
 import Care from "./care.jpeg";
-import Box from "@mui/material/Box";
-import SvgIcon from "@mui/material/SvgIcon";
-import { borderRightColor } from "@mui/system";
 
-import { TextField } from "@mui/material";
-function HomeIcon(props) {
-  return (
-    <SvgIcon {...props}>
-      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-    </SvgIcon>
-  );
-}
-
-const Main = () => {
+import { Icon, TextField } from "@mui/material";
+const Main = ({ contacts }) => {
+  const sampleItems = [
+    "Painter",
+    "ELectrician",
+    "Plumber",
+    "Gardener",
+    "Care Taker",
+    "House cleaning",
+    "Cook",
+    "Driver",
+  ];
   return (
     <div className="main">
       <div className="app-container1">
         <div className="half-page1">
-          <h1 style={{ fontSize: 50 }}>&emsp;&emsp;Home Service Experts</h1>
+          <h1 style={{ fontSize: 50, color: "rgb(71, 35, 126)" }}>
+            &emsp;&emsp;Home Service Experts
+          </h1>
           &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
           <TextField
             id="outlined-search"
@@ -81,6 +87,7 @@ const Main = () => {
             {/* <img src={Electrician} alt="elect" /> */}
             <img
               style={{ width: 380, height: 300 }}
+              alt="g"
               src="https://i.pinimg.com/564x/59/95/c5/5995c50a3b41d113e1705eaf431960bd.jpg"
             ></img>
           </div>
@@ -111,7 +118,7 @@ const Main = () => {
           marginTop: 20,
         }}
       >
-        <center style={{ fontSize: 40 }}>Offers for You</center>
+        <center style={{ fontSize: 40 }}>Take a look</center>
       </div>
       <div className="grid1">
         <br></br>
@@ -123,18 +130,17 @@ const Main = () => {
             borderRadius: 2,
             backgroundColor: "rgb(210, 218, 248)",
             color: "rgb(63, 35, 119)",
-            // fontWeight: "bold",
           }}
           className="card"
         >
-          {/* <img src={Painter} alt="painter1" className="pics" /> */}
           <CardContent>
             <ul>
               <li style={{ fontSize: 23, fontWeight: "bold", marginTop: 0 }}>
-                Upto 60% off on Home
+                Want help in cleaning home!!
               </li>
               <li>
                 <img
+                  alt="h"
                   src="https://static.vecteezy.com/system/resources/previews/003/418/487/original/super-maid-and-home-cleaning-equipment-flat-cartoon-character-vector.jpg"
                   className="clean"
                 ></img>
@@ -153,14 +159,14 @@ const Main = () => {
           }}
           className="card"
         >
-          {/* <img src={Painter} alt="painter1" className="pics" /> */}
           <CardContent>
             <ul>
               <li style={{ fontSize: 23, fontWeight: "bold", marginTop: 0 }}>
-                upto 30% off on Gardening
+                Can I help you with gardening?
               </li>
               <li>
                 <img
+                  alt="gm"
                   src="https://media.istockphoto.com/id/1369215974/vector/man-planting-a-tree-in-garden.jpg?s=612x612&w=0&k=20&c=Iv6WaOsK7IaSM5Dg3mtwTO05LIgIrt1MjquTJPZ0I7U="
                   className="clean"
                 ></img>
@@ -179,15 +185,15 @@ const Main = () => {
           }}
           className="card"
         >
-          {/* <img src={Painter} alt="painter1" className="pics" /> */}
           <CardContent>
             <ul>
               <li style={{ fontSize: 23, fontWeight: "bold", marginTop: 0 }}>
-                Flat 25% off on Home Painting
+                Need a colourful Home?
               </li>
               <li>
                 <img
                   src="https://t3.ftcdn.net/jpg/02/25/52/30/360_F_225523060_yxyEKjRsBgxm8HPBvxkAWBceF2iIzFYo.jpg"
+                  alt=""
                   className="clean"
                 ></img>
               </li>
@@ -198,7 +204,7 @@ const Main = () => {
       <div style={{ backgroundColor: "whitesmoke", height: 8 }}></div>
       <div className="middle">
         <center>
-          <h3 style={{ fontSize: 40 }}>Here's what you can do on HomeRx</h3>
+          <h3 style={{ fontSize: 40 }}>Here's what you can do on HomeRX</h3>
         </center>
         <div className="grid1">
           <br></br>
@@ -219,6 +225,7 @@ const Main = () => {
                 <li>
                   <img
                     src="https://st.hzcdn.com/static_en-IN/homepage/visitorhp_icon_photos%402x.png"
+                    alt="gj"
                     className="ex"
                   ></img>
                 </li>
@@ -243,6 +250,7 @@ const Main = () => {
               <ul>
                 <li>
                   <img
+                    alt="g"
                     src="https://st.hzcdn.com/static_en-IN/homepage/visitorhp_icon_professionals%402x.png"
                     className="ex"
                   ></img>
@@ -268,6 +276,7 @@ const Main = () => {
               <ul>
                 <li>
                   <img
+                    alt="g"
                     src="https://st.hzcdn.com/static_en-IN/homepage/visitorhp_icon_pro_match%402x.png"
                     className="ex"
                   ></img>
@@ -288,95 +297,25 @@ const Main = () => {
           height: 300,
         }}
       >
-        <Card
-          sx={{ maxWidth: 345, height: 255, borderRadius: 8 }}
-          className="card"
-        >
-          <img src={Painter} alt="painter1" className="pics" />
-          <CardContent>
-            <center>
-              <Typography gutterBottom variant="h5" component="div">
-                Painter
-              </Typography>
-            </center>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Share</Button>
-            <Button size="small">Learn More</Button>
-          </CardActions>
-        </Card>
+        <Link to={"/Painting"}>
+          <CardComponent title="Painter" imageSrc={Painter} />
+        </Link>
         &emsp;&emsp;
-        <Card
-          sx={{ maxWidth: 345, height: 255, borderRadius: 8 }}
-          className="card"
-        >
-          <img src={Carp} alt="Carpenter" className="pics" />
-          <CardContent>
-            <center>
-              <Typography gutterBottom variant="h5" component="div">
-                Carpenter
-              </Typography>
-            </center>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Share</Button>
-            <Button size="small">Learn More</Button>
-          </CardActions>
-        </Card>
+        <Link to={"/Carpent"}>
+          <CardComponent title="Carpenter" imageSrc={Carp} />
+        </Link>
         &emsp;&emsp;
-        <Card
-          sx={{ maxWidth: 345, height: 255, borderRadius: 8 }}
-          className="card"
-        >
-          <img src={Pipe} alt="Plumber" className="pics" />
-          <CardContent>
-            <center>
-              <Typography gutterBottom variant="h5" component="div">
-                Plumber
-              </Typography>
-            </center>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Share</Button>
-            <Button size="small">Learn More</Button>
-          </CardActions>
-        </Card>
+        <Link to={"/Plumb"}>
+          <CardComponent title="Plumber" imageSrc={Pipe} />
+        </Link>
         &emsp;&emsp;
-        <Card
-          sx={{ maxWidth: 345, height: 255, borderRadius: 8 }}
-          className="card"
-        >
-          <img src={Care} alt="Child" className="pics" />
-          <CardContent>
-            <center>
-              <Typography gutterBottom variant="h5" component="div">
-                Care Taker
-              </Typography>
-            </center>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Share</Button>
-            <Button size="small">Learn More</Button>
-          </CardActions>
-        </Card>
+        <Link to={"/Caring"}>
+          <CardComponent title="Care Taker" imageSrc={Care} />
+        </Link>
         &emsp;&emsp;
-        <Card
-          sx={{ maxWidth: 345, height: 255, borderRadius: 8 }}
-          className="card"
-        >
-          <img src={Gardener} alt="garden" className="pics" />
-          <CardContent>
-            <center>
-              <Typography gutterBottom variant="h5" component="div">
-                Gardener
-              </Typography>
-            </center>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Share</Button>
-            <Button size="small">Learn More</Button>
-          </CardActions>
-        </Card>
+        <Link to={"/Garden"}>
+          <CardComponent title="Gardener" imageSrc={Gardener} />
+        </Link>
       </div>
       <div style={{ backgroundColor: "whitesmoke", height: 8 }}></div>
       <div>
@@ -384,34 +323,39 @@ const Main = () => {
           <center>Follow us!</center>
           <ul className="footone">
             <li>
-              <img
-                className="foot"
-                src="https://fundrazr.com/wp-content/uploads/2019/12/fb.jpg"
-              ></img>
+              <Link to="https://www.instagram.com/?hl=en">
+                <Icon>
+                  <Instagram />
+                </Icon>
+              </Link>
             </li>
             <li>
-              <img
-                className="foot"
-                src="https://fundrazr.com/wp-content/uploads/2019/12/inst64.png"
-              ></img>
+              <Link to="https://www.facebook.com/">
+                <Icon>
+                  <Facebook />
+                </Icon>
+              </Link>
             </li>
             <li>
-              <img
-                className="foot"
-                src="https://fundrazr.com/wp-content/uploads/2019/12/tw.jpg"
-              ></img>
+              <Link to="https://twitter.com/i/flow/login">
+                <Icon>
+                  <Twitter />
+                </Icon>
+              </Link>
             </li>
             <li>
-              <img
-                className="foot"
-                src="https://fundrazr.com/wp-content/uploads/2019/12/li.jpg"
-              ></img>
+              <Link to="https://www.linkedin.com/uas/login">
+                <Icon>
+                  <LinkedIn />
+                </Icon>
+              </Link>
             </li>
             <li>
-              <img
-                className="foot"
-                src="https://fundrazr.com/wp-content/uploads/2019/12/yt.jpg"
-              ></img>
+              <Link to="https://www.youtube.com/playlist?list=PL0JNv-2mGIY4UwgvWG0L55LfjqkdRPnT3">
+                <Icon>
+                  <YouTube />
+                </Icon>
+              </Link>
             </li>
           </ul>
           <hr />
@@ -420,7 +364,7 @@ const Main = () => {
             <li>Privacy Policy</li>
             <li>Terms of Service</li>
           </ul>
-          <p>
+          <p style={{ color: "darkviolet" }}>
             <center>
               Copyright ©2009-2023 ConnectionPoint Systems Inc. (CPSI) · HomeRX
               All rights reserved.
